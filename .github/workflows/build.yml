@@ -74,7 +74,7 @@ jobs:
         run: brew unlink pcre2
 
       - name: Build wheels
-        uses: pypa/cibuildwheel@v3.3.1
+        uses: pypa/cibuildwheel@v4.3.1
         with:
           output-dir: dist
           package-dir: ./${{ needs.build_sdist.outputs.sdist_name }}
