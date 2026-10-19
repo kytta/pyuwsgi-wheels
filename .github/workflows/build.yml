@@ -6,6 +6,8 @@ on:
     branches: [main]
   pull_request:
 
+permissions: {}
+
 jobs:
   build_sdist:
     name: Build sdist
@@ -15,6 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          persist-credentials: false
           submodules: true
 
       - name: Build sdist
@@ -53,6 +56,7 @@ jobs:
         with:
           name: dist-sdist
           path: dist
+          persist-credentials: false
 
       - uses: actions/download-artifact@v4
         with:
